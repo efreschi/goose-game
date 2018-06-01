@@ -1,7 +1,7 @@
 node {
     def mavenHome = tool "Maven"
     stage ('clone') {
-        checkout SCM
+        checkout scm
     }
     stage ('unit test') {
         sh 'mvn clean test'
