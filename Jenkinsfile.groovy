@@ -5,6 +5,11 @@ node {
     }
     stage ('unit test') {
         sh 'mvn clean test'
+        sh 'ls -l target'
+        junit 'target/surefire-reports/**/*.xml'
+        def betty = "it417"
+        echo 'ciao $betty'
+        echo "ciao $betty"
     }
     stage ('integration test') {
         echo 'Ciao! Adesso dovrei lanciare i test di integrazione'
