@@ -30,28 +30,28 @@ public class HttpGooseGameServletTest {
 
     @Test
     public void testHttpGet() throws Exception {
-        String result = doCall("http://localhost:8080/gooseGame", "GET");
+        String result = doCall("http://localhost:9001/gooseGame", "GET");
         Assert.assertEquals("Hello world", result);
     }
 
     @Test
     public void addPlayer() throws Exception {
-        doCall("http://localhost:8080/gooseGame/configure", "GET");
-        String result = doCall("http://localhost:8080/gooseGame/players?name=Pippo", "POST");
+        doCall("http://localhost:9001/gooseGame/configure", "GET");
+        String result = doCall("http://localhost:9001/gooseGame/players?name=Pippo", "POST");
         Assert.assertEquals("players: Pippo", result);
     }
 
     //@Test
     public void add2Players() throws Exception {
-        doCall("http://localhost:8080/gooseGame/players?name=Pippo", "POST");
-        String result = doCall("http://localhost:8080/gooseGame/players?name=Pluto", "POST");
+        doCall("http://localhost:9001/gooseGame/players?name=Pippo", "POST");
+        String result = doCall("http://localhost:9001/gooseGame/players?name=Pluto", "POST");
         Assert.assertEquals("players: Pippo, Pluto", result);
     }
 
     //@Test
     public void movePippo() throws Exception {
-        doCall("http://localhost:8080/gooseGame/players?name=Pippo", "POST");
-        String result = doCall("http://localhost:8080/gooseGame/move?name=Pippo&dice1=1&dice2=2", "POST");
+        doCall("http://localhost:9001/gooseGame/players?name=Pippo", "POST");
+        String result = doCall("http://localhost:9001/gooseGame/move?name=Pippo&dice1=1&dice2=2", "POST");
         Assert.assertEquals("Pippo rolls 1, 2. Pippo moves from Start to 3", result);
     }
 
