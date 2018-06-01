@@ -16,5 +16,6 @@ node {
     }
     stage ('build artefact') {
         sh 'mvn package'
+        archiveArtifacts artifacts: 'target/GooseGame-1.0-SNAPSHOT-jar-with-dependencies.jar', fingerprint: true
     }
 }
