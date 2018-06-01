@@ -14,4 +14,7 @@ node {
     stage ('integration test') {
         echo 'Ciao! Adesso dovrei lanciare i test di integrazione'
     }
+    stage ('build artefact') {
+        sh 'mvn package'
+    }
 }
