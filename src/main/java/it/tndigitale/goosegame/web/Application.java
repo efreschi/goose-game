@@ -10,7 +10,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
  */
 public class Application {
 
-    private static Server server = new Server(8080);
+    private static Server server = new Server(9001);
 
     public static void main(String... args) throws Exception {
         start(new GooseGame());
